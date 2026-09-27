@@ -1,0 +1,6 @@
+backend/target/
+backend/data/
+*.log
+.idea/
+*.iml
+.DS_Store

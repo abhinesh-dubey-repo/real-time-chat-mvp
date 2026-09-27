@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/chatdb;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# App-level config for the hand-rolled websocket layer
+chatapp:
+  websocket:
+    heartbeat-interval-ms: 30000   # server -> client ping cadence
+    heartbeat-timeout-ms: 90000    # if no pong/activity within this window, session is considered dead
